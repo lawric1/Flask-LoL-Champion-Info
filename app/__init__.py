@@ -18,7 +18,7 @@ def search():
 
         try:
             champion = db[req]
-            data[champion['id']] = champion
+            data[champion['id']] = champion #Creates a new dictionary with the data requested so it can be used in the content for loop
             return render_template('index.html', db=data.values())
         except:
             return render_template('index.html', db='')
