@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Champion Info</title>
+    <link rel="stylesheet" type="text/css" href="/static/styles/style.css">
+    <script src="https://kit.fontawesome.com/46d79e12fc.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="nav">
+        <a class="logo" href="{{ url_for('index') }}">Champion Info</a>
+        <a class="fab fa-github icon" href="https://github.com/lawric1"></a>
+    </header>
+    <section class="title">
+        <h1>Champions</h1>
+        <form class="search_bar" action="{{ url_for('search') }}" method="POST" autocomplete="off">
+            <input class="textfield" type="text" name="SearchField" placeholder="Search for a champion ex: Diana">
+            <input class="button" type="submit" value="Submit">
+        </form>
+    </section>
+    <section class="content">
+        {% if not db %}
+            <h2 class="input_error">champion not found</h2>
+        {% endif %}
+        {% for champion in db %}
+            <div class="card">
+                <header>
+                    <img src="http://ddragon.leagueoflegends.com/cdn/10.25.1/img/champion/{{ champion['id'] }}.png" alt="{{ champion['name'] }}">
+                    <p>{{ champion['name'] }}</p>
+                    <p class="champion_title">{{ champion['title'] }}</p>
+                </header>
+                <div class="tags">
+                    {% for tag in champion['tags'] %}
+                    <img class="tag" src="/static/images/{{ tag }}.png" alt="{{ tag }}">
+                    {% endfor %}
+                </div>
+                <ul>
+                    <li><a class="links" href="https://u.gg/lol/champions/{{ champion['id'] }}/build">
+                            <img src="/static/images/ugg-logo.svg" alt="u.gg">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://na.op.gg/champion/{{ champion['id'] }}">
+                            <img style="margin-top: 12px;" src="/static/images/opgg-logo.svg" alt="op.gg">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        {% endfor %}
+    </section>
+</body>
+</html>

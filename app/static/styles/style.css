@@ -1,0 +1,165 @@
+/* Globals */
+
+
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: #333;
+}
+
+a {
+    text-decoration: none;
+}
+
+section {
+    margin: 32px 16px 32px 16px;
+}
+
+/* Header */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 48px;
+    background-color: #111;
+}
+
+.logo {
+    padding-left: 32px;
+    color: #ccc;
+    font-size: large;
+}
+
+.icon {
+    padding-right: 32px;
+    float: right;
+    color: rgba(204, 204, 204, 0.404);
+    font-size: xx-large;
+    transition: 0.2s;
+}
+
+.icon:hover {
+    color: #ccc;
+}
+
+.title h1 {
+    padding-bottom: 48px;
+    color: #ccc;
+
+    text-align: center;
+    font-size: xx-large;
+    border-bottom: 2px solid #ccc;
+
+}
+
+/* Search bar */
+.search_bar{
+    display: flex;
+    justify-content: center;
+}
+
+.search_bar input {
+    margin: 12px 8px 12px 8px;
+    padding: 0px;
+    height: 32px;
+    font-size: larger;
+    border: none;
+}
+
+.textfield {
+    width: 60%;
+    background-color: transparent;
+    border-bottom: 2px solid rgba(204, 204, 204, 0.404) !important;
+    transition: 0.3s;
+}
+
+.textfield:focus {
+    color: #ccc;
+    border-bottom: 2px solid #ccc !important;
+    outline: none
+}
+
+.button {
+    background-color: transparent;
+    color: rgba(204, 204, 204, 0.404);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.button:hover {
+    color: #ccc;
+}
+
+/* Champion cards */
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.input_error {
+    color: #be482a;
+    text-align: center;
+    font-size: x-large;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    margin: 0 12px 12px 12px;
+    width: 180px;
+    height: 240px;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.card:hover {
+    background-color: rgba(204, 204, 204, 0.103);
+    
+}
+
+.card header {
+    width: auto;
+}
+
+.card img {
+    display: block;
+    margin: 10px auto;
+    width: 40%;
+}
+
+.card p {
+    margin: 8px 0px 8px 0px;
+    color: #58a6ff;
+    text-align: center;
+    font-size: large;
+}
+
+.champion_title {
+    margin: 0;
+    font-size: small !important;
+    font-weight: 10;
+}
+
+.tags {
+    display: flex;
+    justify-content: center;
+}
+
+.tags .tag {
+    margin: 8px;
+    width: 24px;
+}
+
+.card ul {
+    display: flex;
+    justify-content: space-around;
+    margin: 0px;
+    padding: 0 36px 0 36px;
+    list-style-type: none;
+}
+
+.card ul li img {
+    width: 38px;
+}
